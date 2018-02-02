@@ -1,6 +1,6 @@
-let numTarjetCredit = prompt('Ingrese el numero de su tarjeta de credito: ');
+let creditCardNumber = prompt('Ingrese el numero de su tarjeta de credito: ');
 // var numTarjetCredit = 4716231974972307;
-let numTarjetCreditInArray = Array.from(numTarjetCredit);
+let creditCardNumberInArray = Array.from(creditCardNumber);
 
 /**
  * @param {Array} numTarjetCreditInArray
@@ -10,7 +10,7 @@ let numTarjetCreditInArray = Array.from(numTarjetCredit);
  */
 function isValidCard(numTarjetCreditInArray) {
   // Declaramos un array donde van los numeros finales para validar suma total
-  let arrFinal = [];
+  let finalArr = [];
   let arr;
   let sum;
   let output;
@@ -32,19 +32,19 @@ function isValidCard(numTarjetCreditInArray) {
             sum += parseInt(arr[j]);
           }
           // arrNumPar.push(sum);
-          arrFinal.push(sum); // Añadimos al array Final
+          finalArr.push(sum); // Añadimos al array Final
         } else {
-          arrFinal.push(mulpt);
+          finalArr.push(mulpt);
         } // Si la multiplicacion no da simbolo de 2 cifras
       } else { // Si es de posicion Impar,se añade directamente el numero
         // arrNumImpar.push(parseInt(numTarjetCreditInArray[i]));
-        arrFinal.push(parseInt(numTarjetCreditInArray[i]));
+        finalArr.push(parseInt(numTarjetCreditInArray[i]));
       }
     }
     total = 0;
     // Se realiza la sumatoria de los numeros
-    for (let i = 0; i < arrFinal.length; i++) { 
-      total += arrFinal[i];
+    for (let i = 0; i < finalArr.length; i++) { 
+      total += finalArr[i];
     }
     // console.log (total);
 
@@ -60,5 +60,5 @@ function isValidCard(numTarjetCreditInArray) {
   }
 }
 
-alert(isValidCard(numTarjetCreditInArray));
+alert(isValidCard(creditCardNumberInArray));
 
